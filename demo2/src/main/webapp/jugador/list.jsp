@@ -3,14 +3,12 @@
 <%@page import="java.util.ArrayList"%>
 
 <%@page import="java.text.NumberFormat"%>
-<%@ page import="com.example.lab10.entidad.Jugador" %>
+<%@page import="com.example.lab10.entidad.Jugador" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Jugador jugador = new Jugador();
     ArrayList<Jugador> listaJugadores = (ArrayList) request.getAttribute("listar");
     String searchTerm = request.getParameter("searchTerm");
-    genero generoSeleccionado = (genero) request.getAttribute("generoSeleccionado");
-    streaming streamingSeleccionado = (streaming) request.getAttribute("streamingSeleccionado");
     NumberFormat formatter = NumberFormat.getInstance();
 %>
 <!DOCTYPE html>
@@ -29,7 +27,7 @@
 
         <input type="hidden" name="action" value="filtrar">
         <button type="submit">Filtrar</button>
-        <form action="listaPeliculas?action=listar" method="GET">
+        <form action="JugadorController?action=listar" method="GET">
             <button type="submit">Limpiar</button>
         </form>
     </div>
@@ -52,7 +50,6 @@
         for (Jugador i : listaJugadores) {
     %>
     <tr>
-
         <td></td>
         <td><%=i.getIdJugador()%></td>
         <td><%=i.getNombre()%></td>
@@ -60,11 +57,11 @@
         <td><%=i.getPosicion()%></td>
         <td><%=i.getClub()%>/10</td>
         <td><%=i.getSeleccion()%></td>
-        <td><a href="listaActores?idJugador=<%= jugador.getIdJugador() %>">Ver Actores</a></td>
+        <td><a href="listaJugadores?idJugador=<%= jugador.getIdJugador() %>">Ver Jugadores</a></td>
         <%
             if (1 == 1) {
         %>
-        <td> <a href="listaPeliculas?action=borrar&idPelicula=<%= jugador.getIdJugador() %>" class="button-link">Borrar</a></td>
+        <td> <a href="JugadorController?action=borrar&idPelicula=<%= jugador.getIdJugador() %>" class="button-link">Borrar</a></td>
         <%
             }
         %>

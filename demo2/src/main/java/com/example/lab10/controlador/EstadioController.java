@@ -30,7 +30,7 @@ public class EstadioController extends HttpServlet {
             case "listar":
 
                 ArrayList<Estadio> listaPeliculas = daoEstadio.listar();
-                request.setAttribute("lista", listaPeliculas);
+                request.setAttribute("listar", listaPeliculas);
 
                 RequestDispatcher view = request.getRequestDispatcher("/estadio/list.jsp");
                 view.forward(request,response);

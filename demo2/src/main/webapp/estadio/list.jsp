@@ -60,11 +60,11 @@
         <td><%=i.getNombre()%></td>
         <td><%=i.getProvincia()%>/10</td>
         <td><%=i.getClub()%></td>
-        <td><a href="listaEstadios?idEstadio=<%= i.getIdEstadio() %>">Ver Actores</a></td>
+        <td><a href="listaEstadios?idEstadio=<%= i.getIdEstadio() %>">Ver Estadios</a></td>
         <%
             if (1 == 1) {
         %>
-        <td> <a href="listaPeliculas?action=borrar&idPelicula=<%= i.getIdEstadio() %>" class="button-link">Borrar</a></td>
+        <td> <a href="listaEstadios?action=borrar&idPelicula=<%= i.getIdEstadio() %>" class="button-link">Borrar</a></td>
         <%
             }
         %>
