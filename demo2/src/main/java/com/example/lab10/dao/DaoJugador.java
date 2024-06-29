@@ -17,7 +17,7 @@ public class DaoJugador {
             throw new RuntimeException(e);
         }
 
-        String url = "jdbc:mysql://localhost:3306/mydb";
+        String url = "jdbc:mysql://localhost:3306/lab7";
         String username = "root";
         String password = "root";
 
@@ -47,8 +47,5 @@ public class DaoJugador {
 
         return lista;
     }
-
-
-
 
 }
